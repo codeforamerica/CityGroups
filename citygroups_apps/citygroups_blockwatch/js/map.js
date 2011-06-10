@@ -3,9 +3,6 @@ $(document).ready(function() {
   mapData.center = new L.LatLng(47.6063889, -122.3308333); // Seattle
   mapData.zoom = 13;
 
-
-  
-
   var mapSettings = {
     center: mapData.center, 
     zoom: mapData.zoom
@@ -22,14 +19,14 @@ $(document).ready(function() {
   map.setView(mapData.center, mapData.zoom).addLayer(cloudmade);
   
 		
-		var markerLocation = new L.LatLng(51.5, -0.09),
-			marker = new L.Marker(markerLocation);
+  var markerLocation = new L.LatLng(mapData.center),
+  marker = new L.Marker(markerLocation);
 		
 		map.addLayer(marker);
 		marker.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 		
 	
-		var circleLocation = new L.LatLng(51.508, -0.11),
+		var circleLocation = new L.LatLng(mapData.center),
 			circleOptions = {color: '#f03', opacity: 0.7},
 			circle = new L.Circle(circleLocation, 500, circleOptions);
 		
@@ -37,20 +34,19 @@ $(document).ready(function() {
 		map.addLayer(circle);
 		
 	
-		var p1 = new L.LatLng(51.509, -0.08),
-			p2 = new L.LatLng(51.503, -0.06),
-			p3 = new L.LatLng(51.51, -0.047),
-			polygonPoints = [p1, p2, p3],
-			polygon = new L.Polygon(polygonPoints);
+		var p1 = new L.LatLng(47.6061889, -122.3308133),
+		p2 = new L.LatLng(47.6064889, -123.3308233),
+		p3 = new L.LatLng(47.606289, -122.33083537),
+		polygonPoints = [p1, p2, p3],
+		polygon = new L.Polygon(polygonPoints);
 		
 		polygon.bindPopup("I am a polygon.");
 		map.addLayer(polygon);
 		
-		
 		map.on('click', onMapClick);
 		
 		var popup = new L.Popup();
-				
+			
 		function onMapClick(e) {
 			var latlngStr = '(' + e.latlng.lat.toFixed(3) + ', ' + e.latlng.lng.toFixed(3) + ')';
 			
