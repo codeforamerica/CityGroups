@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MoveFood: Add Item</title>
+    <link rel="stylesheet" href="css/fluid_grid.css" type="text/css" />
+    <link rel="stylesheet" href="css/boilerplate.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+    <script type="text/javascript" src="js/movefood.js"></script>
+    <script type="text/javascript" src="js/additem.js"></script>
+  </head>
+  <body>
+    <div id="container" class="section container_12">
+      <div id="header">
+        <div class="logo"><h1><a href="index.html">MoveFood</a></h1></div>
+        <div id="page-title"><h2>Add a New Food Item</h2></div>
+      </div>
+      <div id="content">
+        <form id="add-item-block-form" accept-charset="UTF-8">
+          <div class="form-item">
+            <label for="add_item_form_value">Name</label>
+            <input title="Create a short name for this food" type="text" id="food_name" name="field_name_value" value="" size="25" maxlength="128" />
+            <div class="help">Create a name for this food item.</div>
+          </div>
+        
+          <div class="form-item">
+            <label for="field_description_value">Description</label>
+            <textarea class="text-full form-textarea" id="food_description" name="field_description_value" cols="60" rows="5"></textarea>
+            <div class="help">Describe the food and any special information about it.</div>
+          </div>
+        
+          <div class="form-item">
+            <div class="form-item-inline">
+              <label for="field_quantity_value">Quantity</label>
+              <input title="How many of these are there?" type="text" id="food_quantity" name="field_quantity_value" value="" size="4" maxlength="128" />
+            </div>
+            <div class="form-item-inline">
+              <label for="field_unit_value">Units</label>
+              <input title="How many of these are there?" type="text" id="food_units" name="field_units_value" value="" size="25" maxlength="128" />
+            </div>
+            <div class="help">Describe how many items of food you have, and the unit of measurement.<br /> Examples: 4 cases, 15 boxes, 1 serving.</div>
+          </div>
+        
+          <div class="form-item">
+            <label for="field_perishable">Is this item perishable?</label>
+            <input type="checkbox" id="food_perishable" name="field_perishable" value="perishable" class="checkbox" />Yes
+            <div class="help">Can this food easily go bad?</div>
+          </div>
+        
+          <div class="form-item">
+            <label for="field_expiration_date_value">When does this expire?</label>
+            <input type="text" placeholder="2011-06-10 00:00:00" id="food_expiration" name="field_expiration_value" value="" size="25" maxlength="128" />
+            <div class="help">When will this food go bad? <br /> Examples:<br /><br /> YYYY-MM-DD HH:MM:SS <br /> 2011-06-10 00:00:00</div>
+          </div>
+  
+          <div class="form-item">
+            <div class="location">
+                <label for="field_location_description_value">Location Description</label>
+                <textarea class="text-full form-textarea" id="food_location_description" name="field_location_description_value" cols="60" rows="5"></textarea>
+                <div class="help">Describe your location (Address or a description.)</div>
+              
+                <div class="form-item-inline">
+                  <label for="field_latitude_value">Latitude</label>
+                  <input type="text" id="user_latitude" name="field_latitude_value" value="" size="8" maxlength="128" />
+                </div>
+                <div class="form-item-inline">
+                  <label for="field_longitude_value">Longitude</label>
+                  <input type="text" id="user_longitude" name="field_longitude_value" value="" size="8" maxlength="128" />
+                </div>
+            </div>
+            <div class="help">(Optional.) Latitude & Longitude </div>
+          </div>
+        
+            <div class="form-item">
+                <label>Use my default location information</label>
+                <input type="checkbox" id="food_default_location" value="default_location" class="checkbox"  /> Yes
+              </div>
+        
+          <div class="form-item">
+            <label for="field_notes_value">Notes</label>
+            <textarea class="text-full form-textarea" id="food_notes" name="field_notes_value" cols="60" rows="5"></textarea>
+            <div class="help">Anything else you would like to say about this food item?</div>
+          </div>
+        
+          <div class="form-item">
+            <label for="field_contact_detail_value">Best way to contact you about this item</label>
+            <textarea class="text-full form-textarea" id="food_contact_detail" name="field_contact_detail_value" cols="60" rows="5"></textarea>
+            <div class="help">Anything else you would like to say about how to get in touch with you about this food item?</div>
+          </div>
+        
+          <div class="form-item">
+            <label>Use my default contact information</label>
+            <input type="checkbox" id="food_default_contact" value="default_contact" class="checkbox" />Yes
+          </div>
+        
+          <div class="form-button">
+            <input type="submit" class="form-submit" value="Submit" name="op" id="edit-submit">
+          </div>
+        </form>
+      </div>
+        <div id="footer" class="grid_12 alpha omega">
+          <ul class="menu">
+            <li><a href="https://github.com/chachasikes/MoveFood">Code on Github</a></li>
+            <li>Created at <a href="http://www.rhok.org/">Random Hacks of Kindness #3</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+          </ul>
+        </div>
+  </div>
+  </div>
+</html>

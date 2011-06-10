@@ -1,0 +1,55 @@
+{"nodes":[
+  {"node":
+    {
+      "name":"Nature Consortium",
+      "url":"http:\/\/www.naturec.org",
+      "citygroups_date_updated":"Sunday, May 15, 2011 - 23:25",
+      "categories":"Environmental conservation",
+      "city":"Seattle",
+      "neighborhood":"Delridge",
+      "citygroups_nid":"2968",
+      "ownership":"Community",
+      "citygroups_path":"\/content\/nature-consortium",
+      "citygroups_date_posted":"Sunday, May 15, 2011 - 23:25",
+      "state":"WA","type_document":"Online Community",
+      "type_group_technology":"Website",
+      "location_geo":      
+      
+      { "type": "FeatureCollection",
+        "features": [
+          { "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [102.0, 0.5]},
+            "properties": {"prop0": "value0"}
+            },
+          { "type": "Feature",
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [102.0, 0.0], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]
+                ]
+              },
+            "properties": {
+              "prop0": "value0",
+              "prop1": 0.0
+              }
+            },
+          { "type": "Feature",
+             "geometry": {
+               "type": "Polygon",
+               "coordinates": [
+                 [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
+                   [100.0, 1.0], [100.0, 0.0] ]
+                 ]
+             },
+             "properties": {
+               "prop0": "value0",
+               "prop1": {"this": "that"}
+               }
+             }
+           ]
+         }
+         
+               
+    }
+  }
+}

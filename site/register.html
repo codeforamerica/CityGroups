@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MoveFood</title>
+    <link rel="stylesheet" href="css/fluid_grid.css" type="text/css" />
+    <link rel="stylesheet" href="css/boilerplate.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+    <script type="text/javascript" src="js/movefood.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+  </head>
+  <body>
+    <div id="container" class="section container_12">
+      <div id="header">
+        <div class="logo grid_6 alpha"><h1><a href="index.html">MoveFood</a></h1></div>
+        <div class="grid_6 omega">
+          <ul class="menu">
+            <li id="loginlink"><a href="#" class="login" onClick="return moveFood.showLogin()">Login</a></li>
+            <li id="welcomeuser"><a href="#" class="login">Welcome ...</a></li>
+            <li id="createaccount"><a href="register.html" class="login active">Create Account</a></li>
+            <li id="logoutlink"><a href="#" onclick="return moveFood.logout()" class="login">logout</a></li>
+          </ul>
+                  <div id="page-title"><h2>Create an Account</h2></div>
+      </div>
+      <div id="content">
+        <form id="register-form" accept-charset="UTF-8">
+          <div class="form-item">
+            <label for="field_name_value">Name</label>
+            <input type="text" id="user_name" name="field_name_value" value="" size="25" maxlength="128" />
+            <div class="help">Create a username.</div>
+          </div>
+        
+          <div class="form-item">
+            <label for="field_password_value">Password</label>
+            <input type="password" id="user_password" name="field_password_value" value="" size="25" maxlength="128" />
+            <div class="help">Create a password. Note: this site is totally insecure.</div>
+          </div>
+          
+          <div class="form-item">
+            <label for="field_location_value">Location Description</label>
+            <textarea class="text-full form-textarea" id="user_location" name="field_location_value" cols="60" rows="5"></textarea>
+            <div class="help">Describe your location (Address or a description.)</div>
+          </div>
+          
+          <div class="form-item">
+            <div class="location">
+              <label for="field_location_value">Location Description</label>
+              <textarea class="text-full form-textarea" id="user_location" name="field_location_value" cols="60" rows="5"></textarea>
+              <div class="help">Describe your location (Address or a description.)</div>
+            
+                <div class="form-item-inline">
+                  <label for="field_latitude_value">Latitude</label>
+                  <input type="text" id="user_latitude" name="field_latitude_value" value="" size="8" maxlength="128" />
+                </div>
+                <div class="form-item-inline">
+                  <label for="field_longitude_value">Longitude</label>
+                  <input type="text" id="user_longitude" name="field_longitude_value" value="" size="8" maxlength="128" />
+              </div>
+             </div>
+            <div class="help">(Optional.) Latitude & Longitude </div>
+          </div>
+
+
+          <div class="form-item">
+            <label for="field_contact_value">Contact</label>
+            <textarea class="text-full form-textarea" id="user_contact" name="field_contact_value" cols="60" rows="5"></textarea>
+            <div class="help">What is the best way to contact you?</div>
+          </div>  
+ 
+           <div class="form-item">
+            <label for="field_description_value">Details</label>
+            <textarea class="text-full form-textarea" id="user_description" name="field_description_value" cols="60" rows="5"></textarea>
+            <div class="help">Other details.</div>
+          </div> 
+          
+          <div class="form-button">
+            <input type="submit" class="form-submit" value="Submit" name="op" id="edit-submit">
+          </div>
+          
+        </form>
+      </div>
+        <div id="footer" class="grid_12 alpha omega">
+          <ul class="menu">
+            <li><a href="https://github.com/chachasikes/MoveFood">Code on Github</a></li>
+            <li>Created at <a href="http://www.rhok.org/">Random Hacks of Kindness #3</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+          </ul>
+        </div>
+  </div>
+  </div>
+</html>

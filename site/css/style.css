@@ -1,0 +1,230 @@
+.form-item, .item {
+  width: 30%;
+  padding: 20px 0 20px 0;
+  display: block;
+}
+
+.form-item .checkbox {
+  margin: -5px 10px 0px 0;
+  line-height: 16px;
+}
+.form-item label {
+  display: block;
+  vertical-align: top;
+
+  padding: 0 10px 5px 0;
+}
+
+
+
+.form-item label {
+  font-weight: bold;
+}
+
+table#food-list th {
+  background-color: #C9F4F3;
+}
+
+table th,
+table td {
+  vertical-align: top;
+  text-align: left;
+  padding: 5px 20px 5px 5px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+table,th, td {
+  border: 1px solid #C1D6D5;
+}
+
+#login {
+    z-index:1000;
+    position:absolute;
+    top:10%;
+    left:25%;
+    width:500px;
+    -moz-opacity:0.45;
+    filter:alpha(opacity=45);
+    padding-right: 200px;
+    background-color: #CCEE00;
+    display: none;
+}
+
+#failedlogin {
+    background-color: #AA0000;
+    display: none;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 400%;
+  padding: 10px 0;
+}
+
+h2 {
+  font-size: 150%;
+  padding: 10px 0;
+}
+
+h3 {
+  font-size: 125%;
+  padding: 20px 0 20px 0;
+}
+
+body, p {
+  font-size: 16px;
+}
+
+.user-buttons .button a{
+  padding: 20px;
+  margin: 10px 0 20px 0;
+  height:1.5em;
+  display: block;
+  background-color: #C9F4F3;
+}
+
+.user-buttons .button a:hover,
+.user-buttons .button a:active {
+  background-color: #6AD3D3;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.button a {
+  font-size: 125%;
+}
+
+a:link, a:hover {
+
+}
+
+a:active, a:visited {
+
+}
+
+a.active {
+  color: #666;
+}
+
+.user-image {
+
+}
+#userdetails #username {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+#userdetails {
+  font-size: 125%;
+}
+
+.login {
+  margin: 10px;
+    font-size: 150%;
+}
+
+#userdetails {
+    display: none;
+}
+
+#welcomeuser {
+    display: none;
+}
+
+#logoutlink {
+    display: none;
+}
+
+.form-item-inline {
+  float: left;
+  margin: 0 10px 40px 0;
+}
+
+.help {
+  padding: 10px;
+  display: block;
+  clear: both;
+  margin: 20px;
+  background-color: #C9F4F3;
+}
+
+#content input.form-submit {
+  background-color:#6AD3D3;
+  border:medium none;
+  color:#FFFFFF;
+  cursor:pointer;
+  font-size:24px;
+  font-weight:bold;
+  height:60px;
+  line-height:24px;
+  margin:0 0 80px 0;
+  padding:10px 30px;
+  text-transform:uppercase;
+  width:150px;
+}
+
+#lists {
+    display: none;
+}
+
+#lists .item {
+  background-color: #F5F9AF;
+  padding: 20px;
+}
+
+ul.list li {
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: inside;
+}
+#food-list .button,
+.update-status {
+  font-weight: normal;
+  font-size: 75%;
+}
+
+#food-list .button {
+  padding: 10px;
+  border: 1px dotted #C1D6D5;
+  background-color: #DFEFEF;
+}
+
+ul, ol {
+margin-left: 0;
+}
+
+#footer {
+  padding: 200px 0 10px 0;
+}
+
+
+.menu li {
+  float: left;
+  margin: 0 20px 0 0;
+  display: inline;
+}
+
+#content li {
+  list-style-position: inside;
+  padding-bottom: 20px;
+}
+
+#content ul {
+  padding-bottom: 20px;
+} 
+
+#content p{
+  width: 550px;
+}

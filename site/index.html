@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MoveFood</title>
+  <link rel="stylesheet" href="css/fluid_grid.css" type="text/css" />
+  <link rel="stylesheet" href="css/boilerplate.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+    <script type="text/javascript" src="js/jqcouch.js"></script>
+  <script type="text/javascript" src="js/movefood.js"></script>
+<!--   <script type="text/javascript" src="js/index.js"></script> -->
+</head>
+<body>
+<div id="container" class="section container_12">
+    <div id="header">
+        <div class="logo grid_6 alpha"><h1><a href="index.html">MoveFood</a></h1></div>
+        <div class="grid_6 omega">
+          <ul class="menu">
+            <li id="loginlink"><a href="#" class="login" onClick="return moveFood.showLogin()">Login</a></li>
+            <li id="welcomeuser"><a href="#" class="login">Welcome ...</a></li>
+            <li id="createaccount"><a href="register.html" class="login">Create Account</a></li>
+            <li id="logoutlink"><a href="#" onclick="return moveFood.logout()" class="login">logout</a></li>
+          </ul>
+        </div>
+        <div id="page-title" class="grid_12"><h2>Create an Account</h2></div>
+        </div>
+        <div id="content" class="grid_12 alpha">
+            <div id="userdetails"  class="grid_12 alpha">
+                <div class="grid_2"><div class="userimage"><img src="images/user_placeholder.png"/></div></div>
+                <div class="grid_4">
+                  <div id="username">Joe Washel</div>
+                  <div id="userlocation">Georgetown, WA</div>
+                  <div id="userbio">I love delivering goods for those in need.</div>
+                </div>
+            </div>
+
+                <div id="actions" class="user-buttons grid_12 alpha">
+                  <div id="haveaction" class="grid_3 button"><a href="add-item.html" onclick="moveFood.requireAuthentication($('#haveaction a').attr('href')); return false;">I have</a></div>
+                  <div id="helpaction" class="grid_3 button"><a href="food-list.html" onclick="moveFood.requireAuthentication($('#helpaction a').attr('href')); return false;">I can help</a></div>
+                </div>
+                
+            <div id="lists" class="grid_12 alpha omega">
+                <div id="items" class="grid_5">
+                    <h3>Items I have listed</h3>
+                    <ul id="itemslist"  class="list">
+                    </ul>
+                </div>
+                <div id="claims" class="grid_5">
+                    <h3>Items I have claimed</h3>
+                    <ul id="claimslist"  class="list">
+
+                      <li><a href="#">ItemName</a> <a href="#" id="food-item-7"  class="update-status">Remove</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="grid_12 alpha omega">
+          <ul class="menu">
+            <li><a href="https://github.com/chachasikes/MoveFood">Code on Github</a></li>
+            <li>Created at <a href="http://www.rhok.org/">Random Hacks of Kindness #3</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+<div id="login">
+    <div id="failedlogin">
+        Username or password is invalid.
+    </div>
+
+    <form id="login-form" accept-charset="UTF-8">
+        <div class="form-item">
+            <label for="field_name_value">Name</label>
+            <input type="text" id="user_name" name="field_name_value" value="" size="25" maxlength="128" />
+        </div>
+
+        <div class="form-item">
+            <label for="field_password_value">Password</label>
+            <input type="password" id="user_password" name="field_password_value" value="" size="25" maxlength="128" />
+            <br />(Note: this site is totally insecure.)
+        </div>
+
+        <div class="form-button">
+            <input type="submit" class="form-submit" value="Submit" name="op" id="edit-submit">
+        </div>
+        <div class="form-button">
+            <input type="button" class="cancel" value="Cancel" name="op" id="edit-cancel" onclick="moveFood.hideLogin()">
+        </div>
+
+    </form>
+</div>
+</html>
