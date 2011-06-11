@@ -1,15 +1,15 @@
 var cityGroups = {};
 cityGroups.map = {};
-cityGroups.data = {};
+cityGroups.geoJSON = {};
 
 $(document).ready(function() {
-  cityGroups.data.loadData();
+  cityGroups.loadData();
   cityGroups.map.setupMap();
   cityGroups.map.loadMap();
 });
 
 
-cityGroups.data.loadData = function() {
+cityGroups.loadData = function() {
   var dataPath = "http://localhost/codeforamerica/citygroups/citygroups_map/data/citygroups_sample_data.json";
   
   var data = "";
@@ -18,21 +18,26 @@ cityGroups.data.loadData = function() {
     url: dataPath,
     dataType: 'json',
     data: data,
-    success: cityGroups.data.loadDataSuccess,
-    error: cityGroups.data.loadDataError
+    success: cityGroups.loadDataSuccess,
+    error: cityGroups.loadDataError
   });
   
   return false;
 };
 
-cityGroups.data.loadDataError = function(data) {
+cityGroups.loadDataError = function(data) {
   console.log("error");
+  return false;
 };
 
-cityGroups.data.loadDataSuccess = function(data) {
+cityGroups.loadDataSuccess = function(data) {
   console.log("success!");
-  console.log(data);
+  cityGroups.data = data;
+  console.log(cityGroups.data.nodes[0]['node']['location_geo']);
+    return false;
 };
+
+
 
 cityGroups.map.setupMap = function(){
   cityGroups.map.settings = {};
