@@ -77,21 +77,27 @@ cityGroups.map.loadMap = function() {
   
   var greenIcon = new LeafIcon(),
     marker = new L.Marker(cityGroups.map.settings.center, {icon: greenIcon});
+/*
     
     var greenIcon = new LeafIcon(),
     redIcon = new LeafIcon('images/map/noun_project_679.svg'),
     orangeIcon = new LeafIcon('images/map/noun_project_687.svg');
+*/
     
-    var marker1 = new L.Marker(cityGroups.map.settings.center, {icon: greenIcon}),
+    var marker1 = new L.Marker(cityGroups.map.settings.center, {icon: greenIcon})/*
+,
     marker2 = new L.Marker(cityGroups.map.settings.center, {icon: redIcon}),
-    marker3 = new L.Marker(cityGroups.map.settings.center, {icon: orangeIcon});
+    marker3 = new L.Marker(cityGroups.map.settings.center, {icon: orangeIcon})
+*/;
 
 marker1.bindPopup("I am a green leaf.");
+/*
 marker2.bindPopup("I am a red leaf.");
 marker3.bindPopup("I am an orange leaf.");
+*/
 
-map.addLayer(marker1).addLayer(marker2).addLayer(marker3);
-  
+/* map.addLayer(marker1).addLayer(marker2).addLayer(marker3); */
+  map.addLayer(marker1);
   
 		
   var markerLocation = new L.LatLng(cityGroups.map.settings.center);
