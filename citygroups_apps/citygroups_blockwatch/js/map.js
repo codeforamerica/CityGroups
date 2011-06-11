@@ -3,22 +3,44 @@ cityGroups.map = {};
 cityGroups.data = {};
 
 $(document).ready(function() {
+  cityGroups.data.loadData();
   cityGroups.map.setupMap();
   cityGroups.map.loadMap();
 });
+
+
+cityGroups.data.loadData = function() {
+  var dataPath = "http://localhost/codeforamerica/citygroups/citygroups_map/data/citygroups_sample_data.json";
+  
+  var data = "";
+        
+  $.ajax({
+    url: dataPath,
+    dataType: 'json',
+    data: data,
+    success: cityGroups.data.loadDataSuccess,
+    error: cityGroups.data.loadDataError
+  });
+  
+  return false;
+};
+
+cityGroups.data.loadDataError = function(data) {
+  console.log("error");
+};
+
+cityGroups.data.loadDataSuccess = function(data) {
+  console.log("success!");
+  console.log(data);
+};
 
 cityGroups.map.setupMap = function(){
   cityGroups.map.settings = {};
   cityGroups.map.settings.center = new L.LatLng(47.6063889, -122.3308333); // Seattle
   cityGroups.map.settings.zoom = 13;
-
-
 };
 
 cityGroups.map.loadMap = function(){
-
-
-  
   // initialize the map on the "map" div with a given center and zoom 
   var map = new L.Map('map', cityGroups.map.settings.center);
   
