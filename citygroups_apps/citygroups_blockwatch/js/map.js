@@ -1,11 +1,10 @@
 var cityGroups = {};
 cityGroups.map = {};
 cityGroups.geoJSON = {};
-
+cityGroups.map.settings = {};
+  
 $(document).ready(function() {
   cityGroups.loadData();
-  cityGroups.map.setupMap();
-  cityGroups.map.loadMap();
 });
 
 
@@ -33,20 +32,33 @@ cityGroups.loadDataError = function(data) {
 cityGroups.loadDataSuccess = function(data) {
   console.log("success!");
   cityGroups.data = data;
-  console.log(cityGroups.data.nodes[0]['node']['location_geo']);
-    return false;
+  // console.log(cityGroups.data.nodes[0]['node']['location_geo']);
+  cityGroups.geoJSON(cityGroups.data.nodes[0]['node']['location_geo']['features']);
+  cityGroups.map.loadMap();
+  return false;
 };
 
+cityGroups.geoJSON = function(features) {
+  for (i in features) {
+//  console.log(features[i]["geometry"]["type"]);
 
-
-cityGroups.map.setupMap = function(){
-  cityGroups.map.settings = {};
-  cityGroups.map.settings.center = new L.LatLng(47.6063889, -122.3308333); // Seattle
-  cityGroups.map.settings.zoom = 13;
+    switch(features[i]["geometry"]["type"]) {
+      case "Point":
+        cityGroups.map.settings.latitude = parseFloat(features[i]["geometry"]["coordinates"][0]);
+        cityGroups.map.settings.longitude = parseFloat(features[i]["geometry"]["coordinates"][1]);
+      break;
+    }
+  }
 };
 
-cityGroups.map.loadMap = function(){
+cityGroups.map.loadMap = function() {
   // initialize the map on the "map" div with a given center and zoom 
+  cityGroups.map.settings.zoom = 13;  
+  cityGroups.map.settings.center = L.LatLng(47.6061889, -122.3308133);
+  cityGroups.map.settings.center = new L.LatLng(cityGroups.map.settings.latitude, cityGroups.map.settings.longitude);
+  console.log(cityGroups.map.settings.center);
+      
+      
   var map = new L.Map('map', cityGroups.map.settings.center);
   
   // create a CloudMade tile layer
@@ -57,6 +69,7 @@ cityGroups.map.loadMap = function(){
   map.setView(cityGroups.map.settings.center, cityGroups.map.settings.zoom).addLayer(cloudmade);
   
 		
+/*
   var markerLocation = new L.LatLng(cityGroups.map.settings.center);
   
   marker = new L.Marker(markerLocation);
@@ -64,6 +77,8 @@ cityGroups.map.loadMap = function(){
 	map.addLayer(marker);
 	marker.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 	
+*/
+/*
 
 	var circleLocation = cityGroups.map.settings.center,
 		circleOptions = {color: '#f03', opacity: 0.7},
@@ -71,7 +86,9 @@ cityGroups.map.loadMap = function(){
 	
 	circle.bindPopup("I am a circle.");
 	map.addLayer(circle);
+*/
 	
+/*
 
 	var p1 = new L.LatLng(47.6061889, -122.3308133),
 	p2 = new L.LatLng(47.6064889, -123.3308233),
@@ -93,6 +110,7 @@ cityGroups.map.loadMap = function(){
 		popup.setContent("You clicked the map at " + latlngStr);
 		map.openPopup(popup);
 	}
+*/
 
 
 };
