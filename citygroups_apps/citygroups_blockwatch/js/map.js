@@ -40,8 +40,6 @@ cityGroups.loadDataSuccess = function(data) {
 
 cityGroups.geoJSON = function(features) {
   for (i in features) {
-//  console.log(features[i]["geometry"]["type"]);
-
     switch(features[i]["geometry"]["type"]) {
       case "Point":
         cityGroups.map.settings.latitude = parseFloat(features[i]["geometry"]["coordinates"][0]);
@@ -56,8 +54,6 @@ cityGroups.map.loadMap = function() {
   cityGroups.map.settings.zoom = 13;  
   cityGroups.map.settings.center = L.LatLng(47.6061889, -122.3308133);
   cityGroups.map.settings.center = new L.LatLng(cityGroups.map.settings.latitude, cityGroups.map.settings.longitude);
-  console.log(cityGroups.map.settings.center);
-      
       
   var map = new L.Map('map', cityGroups.map.settings.center);
   
@@ -65,11 +61,39 @@ cityGroups.map.loadMap = function() {
   var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/b59bc8b09cd84af58fcef3019d84e662/997/256/{z}/{x}/{y}.png',
       cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18});
   
-
   map.setView(cityGroups.map.settings.center, cityGroups.map.settings.zoom).addLayer(cloudmade);
   
+  
+  
+  var LeafIcon = L.Icon.extend({
+    iconUrl: 'images/map/noun_project_683.svg',
+/*     shadowUrl: '../docs/images/leaf-shadow.png', */
+    iconSize: new L.Point(38, 95),
+    shadowSize: new L.Point(68, 95),
+    iconAnchor: new L.Point(22, 94),
+    popupAnchor: new L.Point(-3, -76)
+});
+  
+  
+  var greenIcon = new LeafIcon(),
+    marker = new L.Marker(cityGroups.map.settings.center, {icon: greenIcon});
+    
+    var greenIcon = new LeafIcon(),
+    redIcon = new LeafIcon('images/map/noun_project_679.svg'),
+    orangeIcon = new LeafIcon('images/map/noun_project_687.svg');
+    
+    var marker1 = new L.Marker(cityGroups.map.settings.center, {icon: greenIcon}),
+    marker2 = new L.Marker(cityGroups.map.settings.center, {icon: redIcon}),
+    marker3 = new L.Marker(cityGroups.map.settings.center, {icon: orangeIcon});
+
+marker1.bindPopup("I am a green leaf.");
+marker2.bindPopup("I am a red leaf.");
+marker3.bindPopup("I am an orange leaf.");
+
+map.addLayer(marker1).addLayer(marker2).addLayer(marker3);
+  
+  
 		
-/*
   var markerLocation = new L.LatLng(cityGroups.map.settings.center);
   
   marker = new L.Marker(markerLocation);
@@ -77,8 +101,6 @@ cityGroups.map.loadMap = function() {
 	map.addLayer(marker);
 	marker.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 	
-*/
-/*
 
 	var circleLocation = cityGroups.map.settings.center,
 		circleOptions = {color: '#f03', opacity: 0.7},
@@ -86,7 +108,6 @@ cityGroups.map.loadMap = function() {
 	
 	circle.bindPopup("I am a circle.");
 	map.addLayer(circle);
-*/
 	
 /*
 
