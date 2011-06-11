@@ -66,9 +66,9 @@ cityGroups.map.loadMap = function() {
   
   
   var LeafIcon = L.Icon.extend({
-    iconUrl: 'images/map/noun_project_683.svg',
+    iconUrl: 'images/map/map_icons_brain_blue.png',
 /*     shadowUrl: '../docs/images/leaf-shadow.png', */
-    iconSize: new L.Point(38, 95),
+    iconSize: new L.Point(35, 35),
     shadowSize: new L.Point(68, 95),
     iconAnchor: new L.Point(22, 94),
     popupAnchor: new L.Point(-3, -76)
