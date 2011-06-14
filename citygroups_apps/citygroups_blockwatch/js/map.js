@@ -59,10 +59,6 @@ cityGroups.geoJSON = function(nodes) {
     var locationGeoObj = $.parseJSON(nodes[i]["node"]["location_geo"]);
     switch(locationGeoObj.type) {
       case "Point":
-/*
-        cityGroups.map.settings.latitude = parseFloat(features[i]["geometry"]["coordinates"][0]);
-        cityGroups.map.settings.longitude = parseFloat(features[i]["geometry"]["coordinates"][1]);
-*/
       break;
       case "Polygon":
         var polygonPoints = Array();
@@ -73,16 +69,35 @@ cityGroups.geoJSON = function(nodes) {
             polygonPoints.push(polygonPoint);
         }
 
-      polygonOptions = {
-          color: 'red',
-          fillColor: '#f03',
-          fillOpacity: 0.5
-      };
-      console.log(polygonPoints);
-      var polygon2 = new L.Polygon(polygonPoints,polygonOptions);
+        polygonOptions = {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        };
+        console.log(polygonPoints);
+        var polygon2 = new L.Polygon(polygonPoints,polygonOptions);
+        var node = nodes[i]["node"];
 
-  		polygon2.bindPopup("I am a polygon.");
-  		map.addLayer(polygon2);
+
+
+/*     		polygon2.bindPopup(node.title); */
+/*     		map.addLayer(polygon2); */
+    		
+    		var markerLocation = polygonPoints[0];
+
+
+        var marker = new L.Marker(markerLocation);
+        map.addLayer(marker);
+
+        marker.bindPopup(node.title).openPopup();
+	marker.on('click', onMapClick);
+	
+		function onMapClick(e) {
+      console.log(e);
+              map.addLayer(polygon2);
+		}
+	
+
 
       break;
     }
@@ -102,7 +117,25 @@ cityGroups.map.loadMap = function() {
 
   // create a CloudMade tile layer
   var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/b59bc8b09cd84af58fcef3019d84e662/997/256/{z}/{x}/{y}.png',
-      cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18});
+  cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18});
   map.setView(cityGroups.map.settings.center, cityGroups.map.settings.zoom);
 /*   map.setView(cityGroups.map.settings.center, cityGroups.map.settings.zoom).addLayer(cloudmade); */
 };
+
+/*
+cityGroups.map.clickMap = function(node) {
+		map.on('click', onMapClick);
+		
+		var popup = new L.Popup();
+				
+		function onMapClick(e) {
+			var latlngStr = '(' + e.latlng.lat.toFixed(3) + ', ' + e.latlng.lng.toFixed(3) + ')';
+			
+			popup.setLatLng(e.latlng);
+			popup.setContent("You clicked the map at " + latlngStr);
+			map.openPopup(popup);
+		}
+
+
+};
+*/
