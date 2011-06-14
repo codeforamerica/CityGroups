@@ -74,31 +74,23 @@ cityGroups.geoJSON = function(nodes) {
             fillColor: '#f03',
             fillOpacity: 0.5
         };
-        console.log(polygonPoints);
+        // @TODO get center of polygon.
+        
         var polygon2 = new L.Polygon(polygonPoints,polygonOptions);
         var node = nodes[i]["node"];
-
-
-
-/*     		polygon2.bindPopup(node.title); */
-/*     		map.addLayer(polygon2); */
     		
     		var markerLocation = polygonPoints[0];
 
 
         var marker = new L.Marker(markerLocation);
         map.addLayer(marker);
-
-        marker.bindPopup(node.title).openPopup();
-	marker.on('click', onMapClick);
+        marker.on('click', onMapClick);
 	
-		function onMapClick(e) {
-      console.log(e);
-              map.addLayer(polygon2);
-		}
-	
-
-
+    		function onMapClick(e) {
+    		  $('div#popup-content').html(node.title);
+    		  console.log(node.title);
+          map.addLayer(polygon2);
+    		}
       break;
     }
   }
