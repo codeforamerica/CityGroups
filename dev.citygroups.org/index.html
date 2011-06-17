@@ -54,12 +54,52 @@
         do important work but require modern tools to publicize it. 
           
         CityGroups will help them work together and work better.
-           
+        
+        
+        ### Installation
+        CityGroups is built with Drupal. CityGroups is an install profile.
+        "Data-Wiki" is the backend & is a collaborative data collection platform.
+        
+        ### Requirements
+        LAMP stack (or MAMP, XAMP etc.)
+        MYSQL database
+        
+        
+        1. Create your database in MYSQL.
+        
+        2. Download DataWiki codebase.
+        <a href="https://github.com/codeforamerica/Data-Wiki ">https://github.com/codeforamerica/Data-Wiki </a> 
+        (You can either download and unzip it, or clone it from github
+        if you have git installed on your server.)
+        
+        * you may need to install geofield, geoPHP & geocode from source
+        
+        use the master branch for all of these.
+        
+        https://github.com/phayes/geoPHP.git
+        
+      
+        http://drupal.org/project/geofield
+        git clone --branch master http://git.drupal.org/project/geofield.git
+        
+        http://drupal.org/project/geocode
+        git clone --branch master http://git.drupal.org/project/geocode.git
+        
+        3. The DataWiki codebase goes in your web server.
+        
+        4. Visit the path of your server. You should be able to install it.
+        Depending how you do your settings.php, you may need to visit
+        yoursite/install.php
+        
+        You install this like you would any normal Drupal site, except that
+        you will select "CityGroups" as the Install Profile on the install page.
+        
+        5. Follow the prompts.
+        
+        
         ### Development
         The project is under active development this summer and yes, if you would like
         this in your city, drop us a line. 
-        
-        <a href="http://dev.citygroups.org">http://dev.citygroups.org</a>
         
         ### Github
         
