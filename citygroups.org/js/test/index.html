@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<!--
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
+-->
+
+<script src="../libs/jquery-1.6.min.js"></script>
+<link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
+<script type="text/javascript" src="qunit.js"></script>
+
+<script type="text/javascript" src="../city-hero.js"></script>
+
+<script>
+$(document).ready(function () {
+    var testArea = $('#test-area');
+    
+    module("Wizard Tips");
+
+    test("a tip with a class matching a field will be linked to that field", function() {
+        // given...
+        testArea.html(
+            '<input type="text" name="field1" id="field1">' +
+            '<div class="wizard-tip field1-wizard-tip">Something</div>'
+        );
+        $('.wizard-tip').hide();
+        initFieldWizardTips();
+        
+        // when...
+        $('#field1').focus();
+        
+        // then...
+        equals($('.wizard-tip').css('display'), 'block');
+        
+        // finally...
+        testArea.html('');
+    });
+
+    test("a tip with classes matching several field will be linked to all of those field", function() {
+        // given...
+        testArea.html(
+            '<input type="text" name="field1" id="field1"><br>' +
+            '<input type="text" name="field2" id="field2"><br>' +
+            '<input type="text" name="field3" id="field3"><br>' +
+            '<div class="wizard-tip field1-wizard-tip field2-wizard-tip" id="tip1">Something</div>' +
+            '<div class="wizard-tip field3-wizard-tip" id="tip2">Something</div>'
+        );
+        $('.wizard-tip').hide();
+        initFieldWizardTips();
+        
+        var fieldsAndTips = [{field: $('#field1'), tip: $('#tip1')}
+                           , {field: $('#field2'), tip: $('#tip1')}
+                           , {field: $('#field3'), tip: $('#tip2')}];
+        
+        for (i in fieldsAndTips) {
+            // when...
+            fieldsAndTips[i].field.focus();
+            
+            // then...
+            equals(fieldsAndTips[i].tip.css('display'), 'block');
+            equals(fieldsAndTips[i].tip.offset().top,
+                   fieldsAndTips[i].field.offset().top);
+            $('.wizard-tip').hide();
+        }
+        
+        // finally...
+        testArea.html('');
+    });
+    
+    test("mission should be constructed from components", function() {
+        // given...
+        testArea.html(
+            '<input type="text" name="project-mission-problem" id="project-mission-problem">' +
+            '<input type="text" name="project-mission-solution" id="project-mission-solution">' +
+            '<input type="text" name="project-mission-values" id="project-mission-values">' +
+            '<p id="project-mission-mashup"></p>'
+        );
+        compileMissionFromParts();
+        
+        // when...
+        $('#project-mission-problem').val('There is a problem.');
+        $('#project-mission-problem').change();
+        $('#project-mission-solution').val('We will fix it.');
+        $('#project-mission-solution').change();
+        $('#project-mission-values').val('We care about the problem.');
+        $('#project-mission-values').change();
+        
+        // then...
+        equals($('#project-mission-mashup').html(), 'There is a problem. We care about the problem. So, We will fix it.');
+        
+        // finally...
+        testArea.html('');
+    });
+});
+</script>
+  
+</head>
+<body>
+  <h1 id="qunit-header">QUnit example</h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="qunit-fixture">test markup, will be hidden</div>
+  
+  <section id="test-area">
+  </section>
+ </body>
+</html>
