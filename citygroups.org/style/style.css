@@ -1,11 +1,5 @@
-#popup-content {
-  width: 300px;
-  background: #ddd;
-}
-
-
 /**
- * Main CSS for City-Hero
+ * Main CSS for City Groups
  */
 
 /**
@@ -13,7 +7,7 @@
  */
 body {
 
-    font-family:Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     color:#000;
     font-size:16px;
     padding:0;
@@ -21,23 +15,37 @@ body {
 }
 
 .header {
-    background:#E10F8A;
+/*     background:#E10F8A; */
+}
+
+.slogan {
+  padding: 60px 0 0 10px;
 }
 
 .section {
-  padding: 20px 20px 60px 20px;
+  padding: 20px 20px 20px 20px;
   background: #ededed;
   margin: 0 0 20px 0;
 }
 
+
+.section p,
+.section ul,
+.section ol {
+  width: 50%;
+}
+
 ul.menu li {
   float: left;
-  padding: 0 10px 10px 10px;
+  padding: 0 10px 0px 10px;
   margin:  0 0 10px 0;
   line-height: 125%;
-  border-right: 1px solid #ddd;
+  border-right: 1px dotted #ddd;
   list-style: none;
-  
+}
+
+ul.list li strong {
+  color: #9B3D77;
 }
 
 ul.menu {
@@ -46,9 +54,20 @@ ul.menu {
 }
 
 
-h1 { font-size:48px; line-height:150%; margin-bottom:15px;}
-h2 { font-size:32px; line-height:150%; margin-bottom:15px;}
-h3 { font-size:16px; line-height:150%; margin-bottom:15px;}
+ul.list {
+  margin: 0 0 30px 0;
+  padding: 10px 0;
+  list-style-position: inside;
+}
+
+ul.list li {
+  padding: 0 10px 10px 10px;
+}
+
+h1 { font-size:48px; line-height:150%; margin-bottom:30px;}
+h2 { font-size:18px; line-height:150%; margin-bottom:30px;}
+h3 { font-size:16px; line-height:150%; margin-bottom:10px;}
+h4 { font-size:16px; line-height:150%; margin-bottom:10px;}
 
 a:link, a:visited {
     font-weight: bold;
@@ -58,7 +77,7 @@ a:link, a:visited {
 
 a:hover, a:active {
     color:#BA0C78;
-    text-decoration:underline;
+    text-decoration:none;
 }
 .project_block a:hover, .project_block a:active {
 	text-decoration:none;
@@ -116,4 +135,8 @@ html[xmlns] .clearfix {
  
 * html .clearfix {
 	height: 1%;
+}
+
+.footer {
+  padding: 10px 0 20px 0;
 }
