@@ -94,6 +94,10 @@ ul.list li {
   padding: 0;
 }
 
+ul.bulleted {
+  list-style: disc;
+}
+
 ul.list {
   padding: 0;
   margin: 0;
