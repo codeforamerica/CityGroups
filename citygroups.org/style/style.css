@@ -47,8 +47,18 @@ ul.menu li {
   font-size: 125%;
 }
 
+ul.list li {
+  list-style: none;
+  padding: 0 0px 0px 0px;
+}
+
+ul.list {
+  padding: 0 0px 0px 0px;
+}
+
 ul.list li strong {
   color: #9B3D77;
+  font-family: adelle;
 }
 
 ul.menu {
