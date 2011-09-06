@@ -6,12 +6,12 @@
  * General HTML elements styles
  */
 body {
-
-    font-family: Helvetica, Arial, sans-serif;
-    color:#000;
-    font-size:16px;
-    padding:0;
-    margin:0;
+  font-family: Helvetica, Arial, sans-serif;
+  color:#000;
+  font-size:16px;
+  padding:0;
+  margin:0;
+  line-height: 150%;
 }
 
 .slogan {
@@ -29,52 +29,10 @@ body {
   margin: 0 0 20px 0;
 }
 
-
 .section p,
 .section ul,
 .section ol {
   width: 90%;
-}
-
-ul.menu li {
-  float: left;
-  padding: 0 10px 0px 10px;
-  margin:  0 0 10px 0;
-  line-height: 125%;
-  border-right: 1px dotted #ddd;
-  list-style: none;
-  font-family: adelle;
-  font-size: 125%;
-}
-
-ul.list li {
-  list-style: none;
-  padding: 0 0px 0px 0px;
-}
-
-ul.list {
-  padding: 0 0px 0px 0px;
-}
-
-ul.list li strong {
-  color: #9B3D77;
-  font-family: adelle;
-}
-
-ul.menu {
-  margin: 0 0 30px 0;
-  padding: 10px 0;
-}
-
-
-ul.list {
-  margin: 0 0 30px 0;
-  padding: 10px 0;
-  list-style-position: inside;
-}
-
-ul.list li {
-  padding: 0 10px 10px 10px;
 }
 
 h1 { font-size:48px; line-height:150%; margin-bottom:30px;font-family: adelle;}
@@ -92,12 +50,6 @@ a:hover, a:active {
     color:#BA0C78;
     text-decoration:none;
 }
-.project_block a:hover, .project_block a:active {
-	text-decoration:none;
-	}
-
-.right { float:right; }
-.left { float:left; }
 
 p {
     margin-top: 1em;
@@ -106,48 +58,6 @@ p {
 
 strong {
     font-weight: bold;
-}
-
-/**
- * General class styles
- */
-.clear { 
-    clear: both;
-}
-
-.wrapper {
-    width:960px;
-    position:absolute;
-    left:50%;
-    margin-left:-480px;
-}
-
-.hidden {
-    display: none;
-}
-
-/**
- * Clearfix
- */
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
-}
- 
-.clearfix {
-	display: inline-block;
-}
- 
-html[xmlns] .clearfix {
-	display: block;
-}
- 
-* html .clearfix {
-	height: 1%;
 }
 
 .footer {
@@ -161,4 +71,45 @@ html[xmlns] .clearfix {
 
 em {
   font-style: italic;
+}
+
+
+ul.menu li {
+  float: left;
+  padding: 0 10px 0px 10px;
+  margin:  0 0 10px 0;
+  border-right: 1px dotted #ddd;
+  list-style: none;
+  font-family: adelle;
+  font-size: 125%;
+}
+
+ul.menu {
+  margin: 0 0 30px 0;
+  padding: 10px 0;
+}
+
+ul.list li {
+  list-style: none;
+  padding: 0;
+}
+
+ul.list {
+  padding: 0;
+  margin: 0;
+}
+
+ul.list li strong {
+  color: #9B3D77;
+  font-family: adelle;
+}
+
+ul.list {
+  margin: 0 0 20px 0;
+  padding: 10px 0;
+  list-style-position: inside;
+}
+
+ul.list li {
+  padding: 0 10px 20px 10px;
 }
